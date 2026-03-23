@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@layer components {
+  .primary-color {
+    @apply bg-gray-800;
+  }
+
+  .secondary-color {
+    @apply bg-[#F0EDEE];
+  }
+
+  button {
+    @apply cursor-pointer
+  }
+}
