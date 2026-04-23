@@ -35,19 +35,19 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="secondary-color lg:h-20 fixed z-50 lg:grid lg:items-end top-0 pt-2.5 left-2.5 lg:left-37.5 right-2.5 lg:right-37.5">
-      <div className="h-12.5 flex justify-between gap-2.5 bg--300 ">
+    <header className="secondary-color lg:h-20 fixed z-50 lg:grid lg:items-end top-0 py-2.5 left-2.5 lg:left-37.5 right-2.5 lg:right-37.5">
+      <div className="h-12 flex justify-between gap-2.5 bg--300 ">
         {/* <div className="bg-white dark:bg-gray-800 text-black dark:text-white p-4">
   Modo oscuro: {dark ? "activado" : "desactivado"}
 </div> */}
         <button
           onClick={() => setMenuOpen(true)}
-          className=" primary-color lg:hidden text-white w-12.5 rounded-lg flex justify-center items-center">
-          <Icon icon={"material-symbols:menu-rounded"} className="text-[30px]"></Icon>
+          className=" primary-color lg:hidden text-white w-12.5 rounded-full flex justify-center items-center">
+          <Icon icon={"material-symbols:menu-rounded"} className="text-[25px]"></Icon>
         </button>
 
-        <div className="h-12.5 lg:flex gap-2.5 hidden">
-          <button className="w-12.5 h-full rounded-lg overflow-hidden border-2 border-gray-700">
+        <div className="h-12 lg:flex gap-2.5 hidden">
+          <button className="w-12 h-full rounded-full overflow-hidden">
             <img
               src={retrato}
               alt="profile"
@@ -55,25 +55,25 @@ export default function Navbar() {
             />
           </button>
 
-          <button className="flex items-center justify-center gap-1 h-full text-white primary-color p-2.5 rounded-lg">
-            <Icon icon={"academicons:cv-square"} className="text-[24px] "></Icon>
+          <button className="flex items-center justify-center gap-1 h-full text-white primary-color px-5 rounded-full">
+            <Icon icon={"academicons:cv-square"} className="text-[22px] "></Icon>
             <span>descargar</span>
           </button>
-          <button className="flex items-center justify-center w-12.5 h-full text-white primary-color p-2.5 rounded-lg">
-            <Icon icon={"uil:linkedin"} className="text-[24px]"></Icon>
+          <button className="flex items-center justify-center w-12.5 h-full text-white primary-color p-2.5 rounded-full">
+            <Icon icon={"uil:linkedin"} className="text-[22px]"></Icon>
 
           </button>
-          <button className="w-12.5 h-full flex items-center justify-center text-white primary-color p-2.5 rounded-lg">
-            <Icon icon={"material-symbols:mail-rounded"} className="text-[24px]"></Icon>
+          <button className="w-12.5 h-full flex items-center justify-center text-white primary-color p-2.5 rounded-full">
+            <Icon icon={"material-symbols:mail-rounded"} className="text-[22px]"></Icon>
 
           </button>
-          <button className="w-12.5 h-full flex items-center justify-center text-white primary-color p-2.5 rounded-lg">
-            <Icon icon={"mingcute:whatsapp-fill"} className="text-[24px]"></Icon>
+          <button className="w-12.5 h-full flex items-center justify-center text-white primary-color p-2.5 rounded-full">
+            <Icon icon={"mingcute:whatsapp-fill"} className="text-[22px]"></Icon>
 
           </button>
         </div>
 
-        <div className="flex-1 justify-between text-white flex px-5 gap-5 primary-color rounded-lg ">
+        <div className="flex-1 justify-between text-white flex px-5 gap-5 secondary-color rounded-full ">
           {/* {secciones.map((secc, i) => (
             <Link
               key={i}
@@ -89,21 +89,22 @@ export default function Navbar() {
         <div className="flex gap-2.5 bg-en-400">
 
           <button
-            className="flex items-center w-12.5 justify-center h-full gap-1 text-white primary-color p-2.5 rounded-lg cursor-pointer"
+            className="flex items-center w-12.5 justify-center h-full gap-1 text-white primary-color p-2.5 rounded-full cursor-pointer"
             onClick={() => setDark(prev => !prev)}
           >
-            <Icon icon={"line-md:moon-filled-to-sunny-filled-loop-transition"} className="text-[24px]"></Icon>
+            <Icon icon={"line-md:moon-filled-to-sunny-filled-loop-transition"} className="text-[22px]"></Icon>
             {/* <span>tema</span> */}
           </button>
           {/* <div className="bg-white dark:bg-red-500 text-black dark:text-white p-10">
             TEST DARK MODE
           </div> */}
           <button
-            className="flex items-center justify-center gap-1 h-full text-white primary-color p-2.5 rounded-lg"
+            className="flex items-center justify-center gap-1 h-full text-white primary-color p-5
+             rounded-full"
 
           >
-            <Icon icon={"mingcute:world-2-fill"} className="text-[24px]"></Icon>
-            <span>ES</span>
+            <Icon icon={"mingcute:world-2-fill"} className="text-[22px]"></Icon>
+            <span>Español</span>
           </button>
         </div>
 

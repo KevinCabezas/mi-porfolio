@@ -15,7 +15,7 @@ export default function Card({ icono, titulo, path, boton }: CardProps) {
       <span className="text-xl font-bold text-gray-700 ">{titulo}</span>
 
       <Link
-        className="flex items-center justify-center font-semibold p-2.5 bg-orange-400/70 w-full rounded-lg text-white"
+        className="flex items-center justify-center font-semibold p-2 bg-orange-400/70 w-full rounded-full text-white"
         to={path}
       >
         {boton}
