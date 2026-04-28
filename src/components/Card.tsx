@@ -10,16 +10,30 @@ type CardProps = {
 
 export default function Card({ icono, titulo, path, boton }: CardProps) {
   return (
-    <div className="bg-white flex flex-col items-center h-fit gap-5 p-5 rounded-lg shadow-md">
-      <Icon icon={icono} className="text-[50px] text-gray-700 "></Icon>
-      <span className="text-xl font-bold text-gray-700 ">{titulo}</span>
+    <Link
+      to={path}
+      className="group bg-white border border-gray-200 hover:border-sky-300 hover:shadow-sm rounded-xl p-5 flex items-start gap-4 transition-all duration-200"
+    >
+      {/* Icono */}
+      <div className="w-10 h-10 flex items-center justify-center bg-sky-50 group-hover:bg-sky-100 rounded-lg transition-colors shrink-0">
+        <Icon icon={icono} className="text-sky-600 text-lg" />
+      </div>
 
-      <Link
-        className="flex items-center justify-center font-semibold p-2 bg-orange-400/70 w-full rounded-full text-white"
-        to={path}
-      >
-        {boton}
-      </Link>
-    </div>
+      {/* Texto */}
+      <div className="flex flex-col gap-1 min-w-0">
+        <span className="text-sm font-semibold text-gray-900 group-hover:text-sky-600 transition-colors">
+          {titulo}
+        </span>
+
+        <span className="text-xs text-gray-500">
+          {boton}
+        </span>
+      </div>
+
+      {/* Flecha */}
+      <div className="ml-auto text-gray-300 group-hover:text-sky-500 transition-colors">
+        <Icon icon="mdi:arrow-right" className="text-sm" />
+      </div>
+    </Link>
   );
 }

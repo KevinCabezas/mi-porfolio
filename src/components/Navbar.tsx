@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import retrato from "../assets/retrato.jpg";
 import { useEffect, useState } from "react";
@@ -24,94 +24,77 @@ export default function Navbar() {
     }
     // Eliminado el hack de repaint
   }, [dark]);
-  const secciones = [
-    { icono: "iconamoon:profile-fill", titulo: "Sobre mí", path: "about", },
-    { icono: "material-symbols:dashboard-2-gear-rounded", titulo: "Proyectos", path: "proyectos", },
-    { icono: "flowbite:brain-solid", titulo: "Habilidades", path: "habilidades", },
-    { icono: "tabler:briefcase-filled", titulo: "Historial", path: "historial", },
-    { icono: "tabler:school-filled", titulo: "Formación", path: "estudios", },
-    // { icono: "famicons:call", titulo: "CONTACTO", path: "contacto", },
+  // const secciones = [
+  //   { icono: "iconamoon:profile-fill", titulo: "Sobre mí", path: "about", },
+  //   { icono: "material-symbols:dashboard-2-gear-rounded", titulo: "Proyectos", path: "proyectos", },
+  //   { icono: "flowbite:brain-solid", titulo: "Habilidades", path: "habilidades", },
+  //   { icono: "tabler:briefcase-filled", titulo: "Historial", path: "historial", },
+  //   { icono: "tabler:school-filled", titulo: "Formación", path: "estudios", },
+  //   // { icono: "famicons:call", titulo: "CONTACTO", path: "contacto", },
 
-  ];
+  // ];
 
   return (
-    <header className="secondary-color lg:h-20 fixed z-50 lg:grid lg:items-end top-0 py-2.5 left-2.5 lg:left-37.5 right-2.5 lg:right-37.5">
-      <div className="h-12 flex justify-between gap-2.5 bg--300 ">
-        {/* <div className="bg-white dark:bg-gray-800 text-black dark:text-white p-4">
-  Modo oscuro: {dark ? "activado" : "desactivado"}
-</div> */}
+    <header className="bg-sky-200/30 backdrop-blur-md border-b border-sky-300/10 items-center lg:h-16 fixed z-50 lg:grid top-0  left-0 right-0 px-16">
+      <nav className="  flex justify-between gap-2.5 bg--300 items-center ">
+
         <button
           onClick={() => setMenuOpen(true)}
           className=" primary-color lg:hidden text-white w-12.5 rounded-full flex justify-center items-center">
           <Icon icon={"material-symbols:menu-rounded"} className="text-[25px]"></Icon>
         </button>
 
-        <div className="h-12 lg:flex gap-2.5 hidden">
-          <button className="w-12 h-full rounded-full overflow-hidden">
+        <div className=" lg:flex gap-2.5 hidden items-center">
+          <button className="w-10 h-10 rounded-full overflow-hidden">
             <img
               src={retrato}
               alt="profile"
               className="w-full h-full object-cover"
             />
           </button>
-
-          <button className="flex items-center justify-center gap-1 h-full text-white primary-color px-5 rounded-full">
-            <Icon icon={"academicons:cv-square"} className="text-[22px] "></Icon>
-            <span>descargar</span>
+          
+          <button className="flex items-center justify-center gap-1.5 text-white borde hover:bg-sky-400 bg-sky-400/20 rounded-md py-2 px-2 duration-300">
+            <Icon icon={"ep:document"} className="text-xl"></Icon>
+            <span className="text-sm">descargar cv</span>
           </button>
-          <button className="flex items-center justify-center w-12.5 h-full text-white primary-color p-2.5 rounded-full">
-            <Icon icon={"uil:linkedin"} className="text-[22px]"></Icon>
 
-          </button>
-          <button className="w-12.5 h-full flex items-center justify-center text-white primary-color p-2.5 rounded-full">
-            <Icon icon={"material-symbols:mail-rounded"} className="text-[22px]"></Icon>
+          <button className="flex items-center justify-center text-white p-2 bg-sky-400/20 hover:bg-sky-400 rounded-md duration-300">
+            <Icon icon={"uil:linkedin"} className="text-xl"></Icon>
 
           </button>
-          <button className="w-12.5 h-full flex items-center justify-center text-white primary-color p-2.5 rounded-full">
-            <Icon icon={"mingcute:whatsapp-fill"} className="text-[22px]"></Icon>
+          <button className=" flex items-center justify-center text-white bg-sky-400/20 hover:bg-sky-400 p-2 rounded-md duration-300">
+            <Icon icon={"ri:mail-line"} className="text-xl"></Icon>
+
+          </button>
+          <button className=" flex items-center justify-center text-white bg-sky-400/20 hover:bg-sky-400 p-2 rounded-md duration-300">
+            <Icon icon={"mingcute:whatsapp-line"} className="text-xl"></Icon>
 
           </button>
         </div>
 
-        <div className="flex-1 justify-between text-white flex px-5 gap-5 secondary-color rounded-full ">
-          {/* {secciones.map((secc, i) => (
-            <Link
-              key={i}
-              to={secc.path}
-              className="flex items-center gap-3 text-lg hover:text-orange-400"
-              onClick={() => setMenuOpen(false)}
-            >
-              {secc.titulo}
-            </Link>
-          ))} */}
+        <div className=""> 
+
         </div>
-        {/* {!menuOpen && ( */}
-        <div className="flex gap-2.5 bg-en-400">
+        <div className="flex gap-2.5 bg-en-400 items-center ">
 
           <button
-            className="flex items-center w-12.5 justify-center h-full gap-1 text-white primary-color p-2.5 rounded-full cursor-pointer"
+            className="flex items-center  justify-center gap-1 text-white  bg-sky-400/20 hover:bg-sky-400 p-2 rounded-md duration-300"
             onClick={() => setDark(prev => !prev)}
           >
-            <Icon icon={"line-md:moon-filled-to-sunny-filled-loop-transition"} className="text-[22px]"></Icon>
-            {/* <span>tema</span> */}
+            <Icon icon={"line-md:moon-filled-to-sunny-filled-loop-transition"} className="text-xl "></Icon>
           </button>
-          {/* <div className="bg-white dark:bg-red-500 text-black dark:text-white p-10">
-            TEST DARK MODE
-          </div> */}
           <button
-            className="flex items-center justify-center gap-1 h-full text-white primary-color p-5
-             rounded-full"
+            className="flex items-center justify-center gap-1  text-white   bg-sky-400/20 hover:bg-sky-400 p-2 rounded-md duration-300"
 
           >
-            <Icon icon={"mingcute:world-2-fill"} className="text-[22px]"></Icon>
-            <span>Español</span>
+            <Icon icon={"mingcute:world-2-fill"} className="text-xl"></Icon>
+            <span className="text-sm">Español</span>
           </button>
         </div>
 
-        {/* )} */}
-      </div>
+      </nav>
 
-
+{/* 
       {menuOpen && (
         <div className="fixed inset-0 z-40 flex lg:hidden">
           <div className="w-2/3 max-w-75 bg-white h-full p-6 flex flex-col gap-4 shadow-lg animate-slide-in-left ">
@@ -137,7 +120,7 @@ export default function Navbar() {
           <div className="flex-1 bg-black/60" onClick={() => setMenuOpen(false)} />
 
         </div>
-      )}
+      )} */}
 
     </header>
   );
