@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
 
 
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
 
   const [dark, setDark] = useState(() => {
     return localStorage.getItem("theme") === "dark";
@@ -39,7 +39,7 @@ export default function Navbar() {
       <nav className="  flex justify-between gap-2.5 bg--300 items-center ">
 
         <button
-          onClick={() => setMenuOpen(true)}
+          // onClick={() => setMenuOpen(true)}
           className=" primary-color lg:hidden text-white w-12.5 rounded-full flex justify-center items-center">
           <Icon icon={"material-symbols:menu-rounded"} className="text-[25px]"></Icon>
         </button>
