@@ -5,7 +5,7 @@ type key = {
 type Props = key & {
   onClose: () => void;
 }
-export default function ModalProject({ img, onClose }: Props) {
+export default function ModalProject({ onClose }: Props) {
 
   const url = "https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/projects/1778128082330-habitacion.webp"
   return (

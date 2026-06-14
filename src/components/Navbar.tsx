@@ -10,7 +10,7 @@ export default function Navbar() {
 
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const secciones = [
@@ -68,7 +68,7 @@ export default function Navbar() {
         </div>
 
         {!isHome &&
-          <div className="flex-1 space-x-1 hidden 2xl:block 2xl:space-x-5">
+          <div className="flex-1 space-x-1 hidden lg:block 2xl:space-x-5">
             {secciones.map((e, i) => (
               <Link to={e.path} key={i}
                 className=" 2xl:text-lg text-sm px-4 py-2  rounded-full text-white hover:bg-white hover:text-sky-900 font-semibold duration-300 transition-all">
@@ -110,8 +110,7 @@ export default function Navbar() {
                 className="bg-sky-50  rounded-full h-10 w-10 items-center justify-center flex "
                 onClick={() => setMenuOpen(false)}
               >
-                {/* <Icon icon={"hugeicons:closed-caption-alt"} className="text-xl text-sky-600 "></Icon> */}
-                X
+                <Icon icon={"hugeicons:closed-caption-alt"} className="text-xl text-sky-600 "></Icon>
               </button>
             </div>
             {secciones.map((secc, i) => (
