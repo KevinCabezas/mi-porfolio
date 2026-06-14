@@ -14,16 +14,16 @@ export default function Home() {
   ];
 
 return (
-  <div className="h-[calc(100vh)]  flex flex-col">
+  <div className="lg:h-[calc(100vh)] flex flex-col">
     <Portada />
     
-    <main className="bg-gray-50 py-4 lg:py-8 shrink-0 px-4 lg:px-16">
+    <main className="bg-white dark:bg-black/90 py-4 lg:py-8 2xl:py-12 shrink-0 px-4 2xl:px-22 lg:px-16 transition-colors duration-300">
       <section>
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-5">
+        <h2 className="text-sm 2xl:text-lg font-semibold text-gray-400 uppercase  tracking-widest mb-5">
           Explorar
         </h2>
 
-        <div className="w-full grid grid-cols-2 grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 gap-2.5 lg:gap-5">
+        <div className="w-full grid grid-cols-2 grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 gap-2.5  lg:gap-5 2xl:gap-7">
           {data.map((card, i) => (
             <Card
               key={i}

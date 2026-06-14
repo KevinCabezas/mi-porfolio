@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+
+@layer components {
+
+  .text-data {
+    @apply text-xs text-gray-400
+  }
+
+  .text-label {
+    @apply text-sm text-gray-800 font-medium
+  }
+  
+  button {
+    @apply cursor-pointer
+  }
+}

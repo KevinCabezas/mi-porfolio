@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-@layer components {
+/* @variant dark (&:where(.dark, .dark *)); */
+@custom-variant dark (&:where(.dark, .dark *));
+/* @layer components {
   .primary-color {
     @apply bg-gray-800;
   }
@@ -12,4 +14,6 @@
   button {
     @apply cursor-pointer
   }
-}
+} */
+
+

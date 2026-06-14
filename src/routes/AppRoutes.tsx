@@ -7,6 +7,7 @@ import Historial from "../pages/Historial";
 import Estudios from "../pages/Estudios";
 import Habilidades from "../pages/Habilidades";
 import Contacto from "../pages/Contacto";
+import Admin from "../pages/Admin";
 
 const AppRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AppRoutes = () => {
       <Route path="historial" element={<Historial />} />
       <Route path="estudios" element={<Estudios />} />
       <Route path="contacto" element={<Contacto />} />
+      <Route path="admin" element={<Admin />} />
 
       <Route path="*" element={<Error />} />
 
