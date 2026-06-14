@@ -16,11 +16,11 @@ const AppRoutes = () => {
       <Route path="/" element={<Home />} />
       {/* Ruta de error (catch all) */}
       <Route path="about" element={<About />} />
-      <Route path="proyectos" element={<Proyectos />} />
-      <Route path="habilidades" element={<Habilidades />} />
-      <Route path="historial" element={<Historial />} />
-      <Route path="estudios" element={<Estudios />} />
-      <Route path="contacto" element={<Contacto />} />
+      <Route path="projects" element={<Proyectos />} />
+      <Route path="skills" element={<Habilidades />} />
+      <Route path="history" element={<Historial />} />
+      <Route path="education" element={<Estudios />} />
+      <Route path="contact" element={<Contacto />} />
       <Route path="admin" element={<Admin />} />
 
       <Route path="*" element={<Error />} />

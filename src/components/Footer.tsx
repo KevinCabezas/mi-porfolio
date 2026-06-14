@@ -1,17 +1,11 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-
+import { useTranslation } from 'react-i18next';
+import { sections } from "../data/sections";
 export default function Footer() {
-  const secciones = [
-    { icono: "iconamoon:profile-fill", titulo: "Inicio", path: "/", },
-    { icono: "iconamoon:profile-fill", titulo: "Sobre mí", path: "about", },
-    { icono: "material-symbols:dashboard-2-gear-rounded", titulo: "Proyectos", path: "proyectos", },
-    { icono: "flowbite:brain-solid", titulo: "Habilidades", path: "habilidades", },
-    { icono: "tabler:briefcase-filled", titulo: "Historial", path: "historial", },
-    { icono: "tabler:school-filled", titulo: "Formación", path: "estudios", },
-    // { icono: "famicons:call", titulo: "CONTACTO", path: "contacto", },
 
-  ];
+  const { t } = useTranslation();
+ 
   return (
     <footer className="bg-black/90 text-gray-300 mt-auto border-t border-sky-400/20">
       <div className="px-4 lg:px-16 pt-12 pb-8 2xl:px-22">
@@ -25,12 +19,12 @@ export default function Footer() {
                 Kevin <span className="text-sky-400">Cabezas</span> Laura
               </h2>
               <p className="text-gray-300 text-sm 2xl:text-lg mt-1">
-                Desarrollador Full Stack Junior
+                {t("footer_title")}
               </p>
             </div>
 
             <p className="text-gray-400 text-sm 2xl:text-lg leading-relaxed">
-              Apasionado por crear aplicaciones web modernas, funcionales y con buena experiencia de usuario.
+              {t("footer_description")}
             </p>
 
             <div className="flex items-center gap-2">
@@ -68,16 +62,16 @@ export default function Footer() {
           {/* Navegación */}
           <div className="flex flex-col gap-3">
             <h3 className="text-white font-semibold text-sm 2xl:text-lg uppercase tracking-wider mb-1">
-              Navegación
+              {t("footer_navigation")}
             </h3>
 
-            {secciones.map((secc, i) => (
+            {sections.map((secc, i) => (
               <Link
                 key={i}
                 to={secc.path}
                 className="text-gray-400 hover:text-sky-400 text-sm 2xl:text-lg transition-colors w-fit"
               >
-                {secc.titulo}
+                {t(secc.titulo)}
               </Link>
             ))}
           
@@ -86,7 +80,7 @@ export default function Footer() {
           {/* Contacto */}
           <div className="flex flex-col  gap-3">
             <h3 className="text-white font-semibold text-sm 2xl:text-lg uppercase tracking-wider mb-1">
-              Contacto
+              {t("nav_contact")}
             </h3>
 
             <div className="flex items-center gap-2.5 text-sm 2xl:text-lg text-gray-400">
@@ -103,7 +97,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-2.5 text-sm 2xl:text-lg text-gray-400">
               <Icon icon="ri:map-pin-line" className="text-sky-400 text-lg" />
-              <span>España</span>
+              <span>Argentina</span>
             </div>
 
             <div className="mt-2">
@@ -111,8 +105,7 @@ export default function Footer() {
                 href="/contacto"
                 className="inline-flex items-center gap-1.5 px-4 py-2  bg-sky-400/50 hover:bg-sky-400 text-white 2xl:text-lg text-sm font-medium rounded-full transition-colors"
               >
-                {/* <i className="ri-send-plane-line text-sm 2xl:text-lg"></i> */}
-                Enviar mensaje
+                {t("send_message")}
               </a>
             </div>
           </div>
@@ -122,10 +115,10 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-sky-400/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-400 text-xs 2xl:text-base">
-            © 2026 Kevin Cabezas Laura - Todos los derechos reservados
+            © 2026 Kevin Cabezas Laura - {t("footer_copy")}
           </p>
           <p className="text-gray-500 text-xs 2xl:text-base">
-            Desarrollado con React - TypeScript - Tailwind CSS
+            {t("footer_dev")}
           </p>
         </div>
 

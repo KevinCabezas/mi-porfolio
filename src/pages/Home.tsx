@@ -1,23 +1,19 @@
 import Card from "../components/Card";
 import Portada from "../components/Portada";
+import { useTranslation } from 'react-i18next';
+import { sections } from "../data/sections";
+
 
 export default function Home() {
+const { t } = useTranslation();
 
-  const data = [
-    { icono: "iconamoon:profile-fill", titulo: "SOBRE MÍ", path: "about", boton: "Quién soy y qué me motiva" },
-    { icono: "material-symbols:dashboard-2-gear-rounded", titulo: "PROYECTOS", path: "proyectos", boton: "Trabajos y aplicaciones desarrolladas" },
-    { icono: "flowbite:brain-solid", titulo: "HABILIDADES", path: "habilidades", boton: "Tecnologías y herramientas que domino" },
-    { icono: "tabler:briefcase-filled", titulo: "HISTORIAL", path: "historial", boton: "Experiencia laboral y trayectoria" },
-    { icono: "tabler:school-filled", titulo: "FORMACION", path: "estudios", boton: "Estudios y certificaciones obtenidas" },
-    { icono: "famicons:call", titulo: "CONTACTO", path: "contacto", boton: "Hablemos de tu próximo proyecto" },
-
-  ];
+const data =  sections.filter(item => item.path !== "/");
 
 return (
   <div className="lg:h-[calc(100vh)] flex flex-col">
     <Portada />
     
-    <main className="bg-white dark:bg-black/90 py-4 lg:py-8 2xl:py-12 shrink-0 px-4 2xl:px-22 lg:px-16 transition-colors duration-300">
+    <main className="bg-white dark:bg-black/90 py-4 lg:py-8 2xl:py-12 shrink-0 px-4 2xl:px-22 lg:px-16 transition-all duration-200">
       <section>
         <h2 className="text-sm 2xl:text-lg font-semibold text-gray-400 uppercase  tracking-widest mb-5">
           Explorar
@@ -28,9 +24,9 @@ return (
             <Card
               key={i}
               icono={card.icono}
-              titulo={card.titulo}
+              titulo={t(card.titulo)}
               path={card.path}
-              boton={card.boton}
+              boton={t(card.boton)}
             />
           ))}
         </div>

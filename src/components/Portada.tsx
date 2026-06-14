@@ -1,8 +1,10 @@
 // import portada from "../assets/portada.png";
+import { useTranslation } from 'react-i18next';
 
 import { useTheme } from "../service/theme.service";
 
 export default function Portada() {
+const { t } = useTranslation();
 
   const { theme } = useTheme();
   const heroImage =
@@ -32,12 +34,11 @@ export default function Portada() {
         </h1>
 
         <p className="lg:text-sky-300 text-white text-base lg:text-lg 2xl:text-2xl font-light ">
-          Desarrollador Full Stack Junior - Técnico Superior en Sistemas
+          {t("profile_title")}
         </p>
 
         <p className="text-gray-300 text-sm 2xl:text-lg leading-relaxed 2xl:max-w-xl mt-3 lg:max-w-md lg:flex hidden">
-          Apasionado por crear aplicaciones web modernas y funcionales.
-          Busco nuevos retos donde seguir creciendo como desarrollador.
+          {t("profile_description")}
         </p>
       </div>
     </section>
