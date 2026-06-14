@@ -24,17 +24,6 @@ const { t } = useTranslation();
     i18n.changeLanguage(nuevoIdioma);
   };
 
-  const secciones = [
-    { icono: "material-symbols:home-rounded", titulo: "Inicio", path: "/", },
-    { icono: "iconamoon:profile-fill", titulo: "Sobre mí", path: "about", },
-    { icono: "material-symbols:dashboard-2-gear-rounded", titulo: "Proyectos", path: "proyectos", },
-    { icono: "flowbite:brain-solid", titulo: "Habilidades", path: "habilidades", },
-    { icono: "tabler:briefcase-filled", titulo: "Historial", path: "historial", },
-    { icono: "tabler:school-filled", titulo: "Formación", path: "estudios", },
-    { icono: "famicons:call", titulo: "Contacto", path: "contacto", },
-
-  ];
-
 
 
   return (
