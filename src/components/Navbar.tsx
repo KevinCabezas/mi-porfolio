@@ -4,7 +4,7 @@ import retrato from "../assets/retrato.jpg";
 // import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "../service/theme.service";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import { sections } from "../data/sections";
 
@@ -24,7 +24,13 @@ export default function Navbar() {
     i18n.changeLanguage(nuevoIdioma);
   };
 
+  useEffect(() => {
+    document.body.classList.toggle("overflow-hidden", menuOpen);
 
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [menuOpen]);
 
   return (
     <header className={` ${isHome ? "bg-sky-400/30" : "bg-sky-900"} backdrop-blur-md border-b border-sky-300/40 items-center  fixed z-50 lg:grid top-0  left-0 right-0 lg:px-16 px-4 2xl:px-22`}>
@@ -109,8 +115,8 @@ export default function Navbar() {
 
 
       {menuOpen && (
-        <div className="fixed inset-0  flex lg:hidden">
-          <div className="w-2/3 max-w-75 h-screen dark:bg-gray-900 bg-white  p-4 flex flex-col gap-4 shadow-lg animate-slide-in-left ">
+        <div className="fixed inset-0 h-dvh  flex lg:hidden">
+          <div className="w-2/3 max-w-75  dark:bg-[#121212] border-r dark:border-gray-100/10 bg-white p-4 flex flex-col gap-4 shadow-lg animate-slide-in-left ">
             <div className="flex justify-end">
               <button
                 // className="bg-sky-50  rounded-full h-10 w-10 items-center justify-center flex "
@@ -120,41 +126,44 @@ export default function Navbar() {
               </button>
             </div>
 
-            <div className="space-y-2 flex-1 border-b border-gray-200 dark:border-gray-200/20">
+            <div className="space-y-3 flex-1 border-y pt-4 border-gray-200 dark:border-gray-200/20">
               {sections.map((secc, i) => (
                 <Link
                   key={i}
                   to={secc.path}
-                  className="flex items-center  gap-3 text-sm dark:text-white"
+                  className="flex items-center  gap-3 text-base bg-gray-200/30 dark:bg-gray-200/10 rounded-full px-3 py-1  dark:text-white"
                   onClick={() => setMenuOpen(false)}
                 >
                   <Icon icon={secc.icono} className="text-sky-300"></Icon>
-                  <span>{t(secc.titulo)}</span>
+                  <span className="text-gray-700 dark:text-gray-200 font-semibold">{t(secc.titulo)}</span>
                 </Link>
               ))}
             </div>
 
-            <div className="justify-between flex">
-              <button className="flex items-center justify-center gap-1.5 bg-sky-900 dark:bg-sky-700 text-white rounded-full py-1 px-3 duration-300">
-                <Icon icon={"ep:document"} className="text-sm"></Icon>
+            <div className="mt-auto justify-between flex">
+              <button className="flex items-center justify-center gap-1.5 bg-sky-900 dark:bg-sky-700 text-white rounded-full py-1.5 px-3 duration-300">
+                <Icon icon={"ep:document"} className="text-s"></Icon>
                 <span className="text-xs">{t("cv_download")}</span>
               </button>
 
-                <button className="flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white py-1  px-1.5 rounded-full duration-300">
-                  <Icon icon={"uil:linkedin"} className="text-sm"></Icon>
+              <button className="flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white p-1.5  rounded-full duration-300">
+                <Icon icon={"uil:linkedin"} className="text-"></Icon>
 
-                </button>
-                <button className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white py-1  px-1.5 rounded-full duration-300">
-                  <Icon icon={"ri:mail-line"} className="text-sm"></Icon>
+              </button>
+              <button className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white p-1.5  rounded-full duration-300">
+                <Icon icon={"ri:mail-line"} className="texsm"></Icon>
 
-                </button>
-                <button className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white py-1  px-1.5 rounded-full duration-300">
-                  <Icon icon={"mingcute:whatsapp-line"} className="text-sm"></Icon>
+              </button>
+              <Link 
+              to={"/contact"} 
+               onClick={() => setMenuOpen(false)}
+               className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white p-1.5  rounded-full duration-300">
+                <Icon icon={"mingcute:whatsapp-line"} className="textm"></Icon>
 
-                </button>
+              </Link>
             </div>
           </div>
-          <div className="flex-1 h-screen  bg-black/60" onClick={() => setMenuOpen(false)} />
+          <div className="flex-1 dark:bg-gray-200/30 bg-black/80" onClick={() => setMenuOpen(false)} />
 
         </div>
       )}

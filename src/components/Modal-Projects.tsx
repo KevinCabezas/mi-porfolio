@@ -8,16 +8,17 @@ type Props = key & {
 export default function ModalProject({ onClose }: Props) {
 
   const url = "https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/projects/1778128082330-habitacion.webp"
+
   return (
-    <div className="bg-gray-300/30 dark:bg-black/50 h-screen w-screen backdrop-blur-md px-4 lg:px-62.5 2xl:px-62.5 fixed py-10 left-0 top-0 z-50 ">
+    <div className="bg-gray-300/30 dark:bg-black/50 h-dvh w-screen backdrop-blur-md px-4 lg:px-62.5 2xl:px-62.5 fixed py-10 left-0 top-0 z-50 ">
       <div className="bg-white dark:bg-black/80 h-full border border-gray-200 dark:border-gray-200/20 rounded-xl overflow-y-auto space-y-5 ">
-        <div className="flex justify-between p-6 border-b border-gray-100 dark:border-gray-200/20">
+        <div className="flex justify-between lg:p-6 p-4 border-b border-gray-100 dark:border-gray-200/20">
           <div className="flex items-center gap-2 ">
             <div className="bg-sky-50  rounded-full h-10 w-10 items-center justify-center flex ">
               <Icon icon={"hugeicons:closed-caption-alt"} className="text-xl text-sky-600 "></Icon>
             </div>
             <div className="space-y-0.5">
-              <h2 className="font-bold text-xl text-gray-900 dark:text-white ">API REST Node.js</h2>
+              <h2 className="font-bold text-base lg:text-xl text-gray-900 dark:text-white ">API REST Node.js</h2>
               <div className="text-xs space-x-2">
                 <span className="bg-gray-200 px-2 py-0.5 rounded-full ">En producción</span>
                 <span className="text-gray-400">2023</span>
@@ -30,7 +31,7 @@ export default function ModalProject({ onClose }: Props) {
             <Icon icon={"ic:round-close"} className="text-xl text-gray-400 group-hover:text-gray-700 duration-300 transition-all" ></Icon>
           </button>
         </div>
-        <div className="px-6 space-y-6 pb-6">
+        <div className="lg:px-6 px-4 space-y-4 pb-4 lg:space-y-6 lg:pb-6">
           <div className="w-full h-74 bg-amber-300 rounded-xl ">
             <img src={url} alt="" className="w-full h-full object-cover rounded-xl" />
           </div>
@@ -70,7 +71,7 @@ export default function ModalProject({ onClose }: Props) {
               </div>
             </div>
           </div>
-          <div className="flex gap-3 pt-2 border-t border-gray-100 dark:border-gray-200/20">
+          <div className="flex gap-3 pt-4 lg:pt-6 border-t border-gray-100 dark:border-gray-200/20">
             <a className="flex items-center gap-2 px-4 py-2.5 bg-gray-900 hover:bg-gray-700 text-white dark:bg-white dark:text-gray-900 text-sm font-medium rounded-full transition-colors cursor-pointer whitespace-nowrap">
               <Icon icon={"ri-github-fill"} className="text-base" />
               <span>Ver repositorio</span>

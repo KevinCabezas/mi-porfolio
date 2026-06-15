@@ -19,6 +19,13 @@ export default function Proyectos() {
   const close = () => {
     setOpenModal(false);
   }
+  useEffect(() => {
+    document.body.classList.toggle("overflow-hidden", openModal);
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [openModal]);
 
   useEffect(() => {
     const loadProjects = async () => {
