@@ -10,11 +10,11 @@ import { sections } from "../data/sections";
 
 
 export default function Navbar() {
-const { t } = useTranslation();
+  const { t } = useTranslation();
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { theme, toggleTheme } = useTheme();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(true);
 
   const { i18n } = useTranslation();
 
@@ -110,7 +110,7 @@ const { t } = useTranslation();
 
       {menuOpen && (
         <div className="fixed inset-0  flex lg:hidden">
-          <div className="w-2/3 max-w-75 h-screen dark:bg-gray-900 bg-white  p-6 flex flex-col gap-4 shadow-lg animate-slide-in-left ">
+          <div className="w-2/3 max-w-75 h-screen dark:bg-gray-900 bg-white  p-4 flex flex-col gap-4 shadow-lg animate-slide-in-left ">
             <div className="flex justify-end">
               <button
                 // className="bg-sky-50  rounded-full h-10 w-10 items-center justify-center flex "
@@ -119,17 +119,40 @@ const { t } = useTranslation();
                 <Icon icon={"ic:round-close"} className="text-xl dark:text-white text-gray-900"></Icon>
               </button>
             </div>
-            {sections.map((secc, i) => (
-              <Link
-                key={i}
-                to={secc.path}
-                className="flex items-center  gap-3 text-sm dark:text-white"
-                onClick={() => setMenuOpen(false)}
-              >
-                <Icon icon={secc.icono} className="text-sky-300"></Icon>
-                <span>{t(secc.titulo)}</span>
-              </Link>
-            ))}
+
+            <div className="space-y-2 flex-1 border-b border-gray-200 dark:border-gray-200/20">
+              {sections.map((secc, i) => (
+                <Link
+                  key={i}
+                  to={secc.path}
+                  className="flex items-center  gap-3 text-sm dark:text-white"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <Icon icon={secc.icono} className="text-sky-300"></Icon>
+                  <span>{t(secc.titulo)}</span>
+                </Link>
+              ))}
+            </div>
+
+            <div className="justify-between flex">
+              <button className="flex items-center justify-center gap-1.5 bg-sky-900 dark:bg-sky-700 text-white rounded-full py-1 px-3 duration-300">
+                <Icon icon={"ep:document"} className="text-sm"></Icon>
+                <span className="text-xs">{t("cv_download")}</span>
+              </button>
+
+                <button className="flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white py-1  px-1.5 rounded-full duration-300">
+                  <Icon icon={"uil:linkedin"} className="text-sm"></Icon>
+
+                </button>
+                <button className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white py-1  px-1.5 rounded-full duration-300">
+                  <Icon icon={"ri:mail-line"} className="text-sm"></Icon>
+
+                </button>
+                <button className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white py-1  px-1.5 rounded-full duration-300">
+                  <Icon icon={"mingcute:whatsapp-line"} className="text-sm"></Icon>
+
+                </button>
+            </div>
           </div>
           <div className="flex-1 h-screen  bg-black/60" onClick={() => setMenuOpen(false)} />
 
