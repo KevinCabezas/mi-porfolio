@@ -11,7 +11,7 @@ export default function Proyectos() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [openModal, setOpenModal] = useState(false);
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const open = () => {
     setOpenModal(true);
   }

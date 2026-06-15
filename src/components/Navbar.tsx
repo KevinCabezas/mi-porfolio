@@ -14,7 +14,7 @@ export default function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { theme, toggleTheme } = useTheme();
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const { i18n } = useTranslation();
 
