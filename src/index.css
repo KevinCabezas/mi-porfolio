@@ -16,4 +16,23 @@
   }
 } */
 
+/* @layer components {
 
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply text-white;
+  }
+} */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+}
+
+.swiper-pagination-bullet {
+  background: white;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}

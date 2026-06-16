@@ -10,15 +10,18 @@ export default function Proyectos() {
 
   const [projects, setProjects] = useState<Project[]>([]);
   const [openModal, setOpenModal] = useState(false);
-
+  const [idCard, setIdCard] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
-  const open = () => {
+
+  const open = (id: number) => {
+    setIdCard(id);
     setOpenModal(true);
-  }
+  };
 
   const close = () => {
     setOpenModal(false);
-  }
+    setIdCard(null);
+  };
   useEffect(() => {
     document.body.classList.toggle("overflow-hidden", openModal);
 
@@ -71,13 +74,17 @@ export default function Proyectos() {
             icon={e.icon}
             description={e.description}
             frontpage={e.frontpage}
-            image={e.image}
             stack={e.stack}
-            onOpen={open}
+            onOpen={() => open(e.id)}
           />
         ))}
       </div>
-      {openModal && <ModalProject onClose={close} img={projects[1]['frontpage']} />}
+      {openModal && idCard !== null && (
+        <ModalProject
+          onClose={close}
+          id={idCard}
+        />
+      )}
     </main>
   )
 }
