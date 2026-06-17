@@ -17,7 +17,12 @@ export default function Habilidades() {
         {languajesSkills.map((e, i) => (
 
           <div key={i} className="space-y-5 pb-5 border-b dark:border-gray-200/20 border-gray-200">
-            <h3 className="text-lg font-semibold dark:text-gray-200">{e.title}</h3>
+            <div className="flex items-center gap-1">
+              <div className="p-2 flex items-center justify-center bg-sky-50 rounded-full shrink-0">
+                <Icon icon={e.icon} className=" text-sky-600 text-base"></Icon>
+              </div>
+              <h3 className="text-lg font-semibold dark:text-gray-200">{e.title}</h3>
+            </div>
             <button className="bg-sky-600 hover:bg-sky-700 duration-200 transition-all w-25 lg:w-30 -fit py-1 rounded-full gap-2 flex items-center justify-center">
               <span className="text-white text-xs lg:text-sm font-semibold">Saber más</span>
               <Icon icon={"maki:arrow"} className="text-white text-xs" />
@@ -29,7 +34,7 @@ export default function Habilidades() {
 
               ))}
             </div>
-            
+
           </div>
         ))}
       </div>

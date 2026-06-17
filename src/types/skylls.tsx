@@ -7,5 +7,6 @@ export type TSkillCard = {
 export type TSecctionsSkills = {
     title: string;
     description: string;
+    icon: string;
     secctions: TSkillCard[];
   }
