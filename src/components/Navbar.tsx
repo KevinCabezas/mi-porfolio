@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/react";
 import retrato from "../assets/retrato.jpg";
 // import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import { useTheme } from "../service/theme.service";
 import { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
@@ -44,14 +44,14 @@ export default function Navbar() {
 
 
         <div className=" lg:flex gap-2.5 hidden items-center">
-          <button className="w-10 h-10 2xl:w-11 2xl:h-11 rounded-full overflow-hidden">
+          <Link to={"/about"} className="w-10 h-10 2xl:w-11 2xl:h-11 rounded-full overflow-hidden">
             <img
               src={retrato}
               alt="profile"
               className="w-full h-full object-cover"
             />
-          </button>
-          {isHome && <>
+          </Link>
+            {isHome && <>
             <button className="flex items-center justify-center gap-1.5 text-sky-900 hover:text-white borde hover:bg-sky-400 bg-white rounded-full py-2 px-4 duration-300">
               <Icon icon={"ep:document"} className="text-xl 2xl:text-2xl"></Icon>
               <span className="text-sm 2xl:text-base  ">{t("cv_download")}</span>
@@ -76,10 +76,18 @@ export default function Navbar() {
         {!isHome &&
           <div className="flex-1 space-x-1 hidden lg:block 2xl:space-x-5">
             {sections.map((e, i) => (
-              <Link to={e.path} key={i}
-                className={` 2xl:text-lg text-sm px-4 py-2  rounded-full text-white hover:bg-white hover:text-sky-900 font-semibold duration-300 transition-all`}>
+              <NavLink
+                key={i}
+                to={e.path}
+                className={({ isActive }) =>
+                  `2xl:text-lg text-sm px-4 py-2 rounded-full font-semibold duration-300 transition-all ${isActive
+                    ? "bg-white text-sky-900"
+                    : "text-white hover:bg-white hover:text-sky-900"
+                  }`
+                }
+              >
                 {t(e.titulo)}
-              </Link>
+              </NavLink>
 
             ))}
           </div>
@@ -128,15 +136,21 @@ export default function Navbar() {
 
             <div className="space-y-3 flex-1 border-y pt-4 border-gray-200 dark:border-gray-200/20">
               {sections.map((secc, i) => (
-                <Link
+                <NavLink
                   key={i}
                   to={secc.path}
-                  className="flex items-center  gap-3 text-base bg-gray-200/30 dark:bg-gray-200/10 rounded-full px-3 py-1  dark:text-white"
                   onClick={() => setMenuOpen(false)}
+                  className={({ isActive }) =>
+                  `flex items-center  gap-3 text-base  rounded-full px-3 py-1   ${isActive
+                    ? "bg-sky-900 text-white dark:bg-gray-200 dark:text-gray-700"
+                    : "bg-gray-200/30 dark:bg-gray-200/10 dark:text-white"
+                  }`
+                }
+              
                 >
-                  <Icon icon={secc.icono} className="text-sky-300"></Icon>
-                  <span className="text-gray-700 dark:text-gray-200 font-semibold">{t(secc.titulo)}</span>
-                </Link>
+                  <Icon icon={secc.icono} className={`text-sky-300`}></Icon>
+                  <span className=" font-semibold">{t(secc.titulo)}</span>
+                </NavLink>
               ))}
             </div>
 
@@ -154,10 +168,10 @@ export default function Navbar() {
                 <Icon icon={"ri:mail-line"} className="texsm"></Icon>
 
               </button>
-              <Link 
-              to={"/contact"} 
-               onClick={() => setMenuOpen(false)}
-               className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white p-1.5  rounded-full duration-300">
+              <Link
+                to={"/contact"}
+                onClick={() => setMenuOpen(false)}
+                className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white p-1.5  rounded-full duration-300">
                 <Icon icon={"mingcute:whatsapp-line"} className="textm"></Icon>
 
               </Link>
