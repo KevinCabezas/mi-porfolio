@@ -33,7 +33,7 @@ export default function ProfileSection() {
               <img
                 alt="Kevin Cabezas Laura"
                 className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-top border-4 border-white shadow-md"
-                src="https://mi-porfolio-rswh.vercel.app/assets/retrato-BrBK2kIF.jpg"
+                src="https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/retrato.jpg"
               />
             </div>
 
@@ -144,14 +144,10 @@ export default function ProfileSection() {
                 </span>
               </div>
               <FormComentario />
-
             </div>
           </div>
         }
-
-
       </div>
-
     </div>
   );
 }

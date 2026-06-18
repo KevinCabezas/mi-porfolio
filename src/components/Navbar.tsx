@@ -1,6 +1,6 @@
 // import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import retrato from "../assets/retrato.jpg";
+// import retrato from "../assets/retrato.jpg";
 // import { useEffect, useState } from "react";
 import { Link, useLocation, NavLink } from "react-router-dom";
 import { useTheme } from "../service/theme.service";
@@ -46,7 +46,7 @@ export default function Navbar() {
         <div className=" lg:flex gap-2.5 hidden items-center">
           <Link to={"/about"} className="w-10 h-10 2xl:w-11 2xl:h-11 rounded-full overflow-hidden">
             <img
-              src={retrato}
+              src={"https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/retrato.jpg"}
               alt="profile"
               className="w-full h-full object-cover"
             />
