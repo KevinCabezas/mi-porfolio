@@ -9,7 +9,7 @@ import { t } from "i18next";
 export default function CommentsPage() {
   const [commets, setComments] = useState<TComment[]>([]);
 
- const loadComments = async () => {
+  const loadComments = async () => {
     try {
       const data = await getAllComents();
       setComments(data);
@@ -45,7 +45,14 @@ export default function CommentsPage() {
               key={i}
               className="dark:bg-black/10 dark:border-gray-200/20 bg-gray-100 border border-gray-200 p-5 flex gap-2 flex-col rounded-lg"
             >
-              <span className="text-xs font-semibold dark:text-white">{c.name}</span>
+              <div className="flex gap-1 items-end">
+                <div className="dark:bg-gray-200/20 bg-white rounded-full p-1 border border-gray-200 dark:border-gray-200/40">
+                  <Icon icon={'solar:user-linear'} className="dark:text-white text-xs"></Icon>
+
+                </div>
+                <span className="text-xs font-semibold dark:text-white">{c.name}</span>
+              </div>
+
               <p className="text-sm text-gray-600 dark:text-gray-400 ">{c.comment}</p>
             </div>
           ))}

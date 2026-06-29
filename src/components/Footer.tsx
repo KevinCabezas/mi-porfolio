@@ -15,8 +15,8 @@ export default function Footer() {
           {/* Información personal */}
           <div className="flex flex-col gap-4">
             <div>
-              <h2 className="text-white font-bold text-lg 2xl:text-2xl tracking-tight">
-                Kevin <span className="text-sky-400">Cabezas</span> Laura
+              <h2 className="text-white font-semibold text-lg 2xl:text-2xl tracking-tight">
+                Kevin Cabezas Laura
               </h2>
               <p className="text-gray-300 text-sm 2xl:text-lg mt-1">
                 {t("footer_title")}
