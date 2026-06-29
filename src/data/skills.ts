@@ -77,7 +77,7 @@ export const languajesSkills: TSecctionsSkills[] = [
         color: "dark:text-gray-200 text-gray-800"
       },
       {
-        title: "TailwindCSS",
+        title: "Tailwind CSS",
         icon: "hugeicons:tailwindcss",
         color: "text-sky-400"
       },

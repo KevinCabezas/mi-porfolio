@@ -52,3 +52,11 @@ values
   array['/images/inventario.jpg'],
   array['Vue.js', 'Laravel', 'MySQL']
 );
+
+
+CREATE TABLE comments (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  comment VARCHAR(500) NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
+);

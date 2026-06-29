@@ -43,7 +43,7 @@ export default function ModalProject({ onClose, id }: Props) {
   // const url = "https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/projects/1778128082330-habitacion.webp"
 
   return (
-    <div className="bg-gray-300/30 dark:bg-black/50 h-dvh w-screen backdrop-blur-md px-4 lg:px-62.5 2xl:px-62.5 fixed py-10 left-0 top-0 z-50 ">
+    <div className="bg-gray-300/30 dark:bg-[#121212] h-dvh w-screen backdrop-blur-md px-4 lg:px-62.5 2xl:px-62.5 fixed py-10 left-0 top-0 z-50 ">
       {/* {loading &&
         <div className="flex flex-col h-full items-center bg-amber-30 text-gray-600 dark:text-gray-300 justify-center">
           <Icon icon={"ph:spinner-bold"} className="fa-solid fa-spinner animate-spin text-3xl  [animation-duration:1.5s]"></Icon>

@@ -7,7 +7,9 @@ export const getAllProjects = async (): Promise<Project[]> => {
     .from("projects")
     .select("id, title, description,icon, stack, created_at, frontpage")
     .order("created_at", { ascending: false });
-  console.log(data,"data")
+
+  console.log(data, "data")
+  
   if (error) {
     console.error(error);
     throw new Error(error.message);
@@ -23,10 +25,10 @@ export const getDetailProject = async (id: number): Promise<TDetailsProject> => 
     .eq("id", id)
     .single();
 
-    if (error) {
-      console.error(error);
-      throw new Error(error.message);
-    }
+  if (error) {
+    console.error(error);
+    throw new Error(error.message);
+  }
 
-    return data as TDetailsProject;
+  return data as TDetailsProject;
 }
