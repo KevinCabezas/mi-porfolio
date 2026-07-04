@@ -1,7 +1,4 @@
-// import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-// import retrato from "../assets/retrato.jpg";
-// import { useEffect, useState } from "react";
 import { Link, useLocation, NavLink } from "react-router-dom";
 import { useTheme } from "../service/theme.service";
 import { useState, useEffect } from "react";
@@ -51,16 +48,21 @@ export default function Navbar() {
               className="w-full h-full object-cover"
             />
           </Link>
-            {isHome && <>
+          {isHome && <>
             <button className="flex items-center justify-center gap-1.5 text-sky-900 hover:text-white borde hover:bg-sky-400 bg-white rounded-full py-2 px-4 duration-300">
               <Icon icon={"ep:document"} className="text-xl 2xl:text-2xl"></Icon>
               <span className="text-sm 2xl:text-base  ">{t("cv_download")}</span>
             </button>
 
-            <button className="flex items-center justify-center text-sky-900 hover:text-white p-2 bg-white hover:bg-sky-400 rounded-full duration-300">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/kevin-cabezas-8b8a472a8"
+              className="flex items-center justify-center text-sky-900 hover:text-white p-2 bg-white hover:bg-sky-400 rounded-full duration-300">
+
               <Icon icon={"uil:linkedin"} className="text-xl  2xl:text-2xl"></Icon>
 
-            </button>
+            </a>
             <button className=" flex items-center justify-center text-sky-900 hover:text-white bg-white hover:bg-sky-400 p-2 rounded-full duration-300">
               <Icon icon={"ri:mail-line"} className="text-xl  2xl:text-2xl"></Icon>
 
@@ -75,7 +77,9 @@ export default function Navbar() {
 
         {!isHome &&
           <div className="flex-1 space-x-1 hidden lg:block 2xl:space-x-5">
-            {sections.map((e, i) => (
+            {sections
+            .filter((e) => e.titulo !== "nav_contact")
+            .map((e, i) => (
               <NavLink
                 key={i}
                 to={e.path}
@@ -96,8 +100,15 @@ export default function Navbar() {
 
         <div className="flex gap-2.5 bg-en-400 items-center ">
 
+          <Link
+            to={'/about?tab=contact'}
+            // state={{ tab: "info" }}
+            className="btn-navbar py-2 px-3 hidden lg:flex bg-sky-300 font-semibold gap-3 2xl:text-lg text-sm text-sky-900 hover:bg-sky-500 hover:text-white">
+            <span>{t("contact_me")}</span>
+            <Icon icon={'maki:arrow'} className=""></Icon>
+          </Link>
           <button
-            className="flex items-center  justify-center gap-1 text-sky-900 hover:text-white  bg-white hover:bg-sky-400 p-2 rounded-full duration-300"
+            className="btn-navbar p-2"
             onClick={toggleTheme}
           >
             {/* {theme} */}
@@ -106,7 +117,7 @@ export default function Navbar() {
           </button>
 
           <button
-            className="flex items-center justify-center gap-1 text-sky-900 hover:text-white   bg-white hover:bg-sky-400 py-2 pl-2 pr-3 rounded-full duration-300"
+            className="btn-navbar py-2 pl-2 pr-3"
             onClick={alternarIdioma}
           >
             <Icon icon={"mingcute:world-2-fill"} className="text-xl  2xl:text-2xl"></Icon>
@@ -141,12 +152,12 @@ export default function Navbar() {
                   to={secc.path}
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
-                  `flex items-center  gap-3 text-base  rounded-full px-3 py-1   ${isActive
-                    ? "bg-sky-900 text-white dark:bg-gray-200 dark:text-gray-700"
-                    : "bg-gray-200/30 dark:bg-gray-200/10 dark:text-white"
-                  }`
-                }
-              
+                    `flex items-center  gap-3 text-base  rounded-full px-3 py-1   ${isActive
+                      ? "bg-sky-900 text-white dark:bg-gray-200 dark:text-gray-700"
+                      : "bg-gray-200/30 dark:bg-gray-200/10 dark:text-white"
+                    }`
+                  }
+
                 >
                   <Icon icon={secc.icono} className={`text-sky-300`}></Icon>
                   <span className=" font-semibold">{t(secc.titulo)}</span>
@@ -173,7 +184,6 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white p-1.5  rounded-full duration-300">
                 <Icon icon={"mingcute:whatsapp-line"} className="textm"></Icon>
-
               </Link>
             </div>
           </div>

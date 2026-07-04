@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { t } from "i18next";
+import { Icon } from "@iconify/react";
 
 
 export default function ProfileSection() {
@@ -46,14 +46,18 @@ export default function ProfileSection() {
               <button
                 className="flex items-center gap-1.5 px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white text-sm font-medium rounded-full transition-colors whitespace-nowrap"
               >
+                <Icon icon={"ep:document"} className="text-xl"></Icon>
                 {t("cv_download")}
               </button>
-              <Link to={"/contact"}
-
-                className="flex items-center gap-1.5 px-4 py-2 dark:text-gray-200 dark:bg-black/10 bg-gray-100 dark:border dark:border-gray-200/20 hover:bg-gray-200 text-gray-700 text-sm font-medium rounded-full transition-colors whitespace-nowrap"
+              {/* <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/kevin-cabezas-8b8a472a8"
+                className="flex items-center gap-1.5 px-4 py-2 dark:hover:text-gray-700 dark:text-gray-200 dark:bg-black/10 bg-gray-100 dark:border dark:border-gray-200/20 hover:bg-gray-200 text-gray-700 text-sm font-medium rounded-full transition-colors whitespace-nowrap"
               >
-                {t("contact_me")}
-              </Link>
+                <Icon icon={"circum:linkedin"} className="text-xl"></Icon>
+                Echar un vistaso
+              </a> */}
             </div>
           </div>
         </div>

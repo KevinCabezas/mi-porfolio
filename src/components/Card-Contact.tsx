@@ -1,52 +1,71 @@
 import { Icon } from "@iconify/react";
+import type { TContact } from "../types/about";
+import { useState } from "react";
+
+export default function CardContact({ title, description, icon, btn, link, copi }: TContact) {
 
 
-export default function CardContact() {
+  const [copied, setCopied] = useState(false);
 
+  const handleCopy = async () => {
+    if (!copi) return;
 
+    try {
+      await navigator.clipboard.writeText(copi);
+      setCopied(true);
+
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    } catch (error) {
+      console.error("Error al copiar:", error);
+    }
+  };
   return (
-    <div className="lg:w-1/2 2xl:w-1/2 w-full bg-white transition-all duration-200 dark:bg-black/10 border dark:border-gray-200/20 border-gray-200 rounded-xl p-6 flex flex-col gap-4">
-      <div>
 
-        <h3 className="text-sm font-bold text-gray-900 mb-1">¡Hablemos!</h3>
-        <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Estoy disponible para proyectos freelance, colaboraciones o nuevas  oportunidades laborales. No dudes en escribirme.</p>
+
+    <div
+      className=" dark:bg-black/10 dark:border-gray-200/20 bg-white border flex flex-col justify-between  border-gray-200 rounded-xl p-3 lg:p-5 2xl:p-7 lg:flex-row items-start gap-4 2xl:gap-6 transition-all duration-200"
+    >
+      <div className="flex flex-col flex-1 gap-3 w-full justify-between h-full">
+        <div className="flex items-center gap-2">
+          <div className="p-1 flex items-center justify-center bg-sky-50 rounded-full transition-all shrink-0">
+            <Icon icon={icon} className="text-sky-600 text-lg 2xl:text-2xl" />
+          </div>
+          <span className="text-sm 2xl:text-lg  font-semibold dark:text-gray-200 text-gray-900 transition-all">
+            {title}
+          </span>
+        </div>
+
+        <div className="flex flex-col gap-1 w-full bg-yellow- ">
+
+          <span className="text-xs 2xl:text-base dark:text-gray-400 text-gray-500">
+            {description}
+          </span>
+        </div>
       </div>
-      <div className="flex flex-col gap-3 border-t transition-all duration-200 border-gray-100 dark:border-gray-200/20 pt-4">
-        <div className="flex items-center gap-3 bg-white dark:bg-black/0 transition-all duration-200">
-          <div className="w-9 h-9 flex items-center justify-center bg-sky-50 rounded-full shrink-0">
-            <Icon icon={"ri-mail-line"} className="text-sky-600 text-sm" ></Icon>
-          </div>
-          <div className="flex flex-col ">
-            <span className="text-xs text-gray-400 ">Email</span>
-            <span className="text-sm text-gray-700 dark:text-gray-300 font-medium hover:text-sky-600 transition-all duration-200 cursor-pointer truncate block">cabezaslaurakevin@gmail.com</span>
-          </div>
-        </div>
-        <div className="flex bg-white  dark:bg-black/10 transition-all duration-200 items-center gap-3 ">
-          <div className="w-9 h-9 flex items-center justify-center bg-sky-50 rounded-full shrink-0">
-            <Icon icon={"ri-phone-line"} className="text-sky-600 text-sm"></Icon>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs text-gray-400">Teléfono</span>
-            <span className="text-sm text-gray-700 font-medium hover:text-sky-600 transition-all duration-200 cursor-pointer truncate block">+549 1132179663</span></div>
-        </div>
-        <div className="flex bg-white  dark:bg-black/10 items-center gap-3 transition-all duration-200 ">
-          <div className="w-9 h-9 flex items-center justify-center bg-sky-50 rounded-full shrink-0">
-            <Icon icon={"ri-linkedin-fill"} className="text-sky-600 text-sm"></Icon>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs text-gray-400">LinkedIn</span>
-            <span className="text-sm text-gray-700 font-medium hover:text-sky-600 transition-all duration-200 cursor-pointer truncate block">sdfsdf</span>
-          </div>
-        </div>
-        <div className="flex bg-white  dark:bg-black/10 items-center gap-3 transition-all duration-200">
-          <div className="w-9 h-9 flex items-center justify-center bg-sky-50 rounded-full shrink-0">
-            <Icon icon={"ri-map-pin-line"} className="text-sky-600 text-sm"></Icon>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs text-gray-400">Ubicación</span>
-            <span className="text-sm text-gray-700 font-medium hover:text-sky-600 transition-all duration-200 cursor-pointer truncate block">Argentina</span></div>
-        </div>
+
+      <div
+
+        className="text-xs w-full flex lg:flex-col gap-2 text-gray-300 bg-red h-full items-end justify-around lg:justify-end  font-semibold transition-all">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={link}
+          className="h-6 w-15   flex items-center justify-center bg-sky-600 hover:bg-sky-700 text-white rounded-full transition-colors">
+          {btn}
+        </a>
+        <button
+          onClick={handleCopy}
+          className="h-6 w-15 group  flex items-center justify-center dark:hover:text-gray-700 dark:text-gray-200 dark:bg-black/10 bg-gray-200 dark:border dark:border-gray-200/20 hover:bg-gray-200 text-gray-600  rounded-full transition-colors"
+        >
+          {copied ? (<Icon icon="mdi:check"  className="dark:text-white text-gray-700 group-hover:text-gray-900 text-lg" />) : (<>Copiar</>)}
+        </button>
       </div>
     </div>
+
+
+// 591132179663 cabezaslaurakevin@gmail.com dsfdsf https://github.com/KevinCabezas www.linkedin.com/in/kevin-cabezas-8b8a472a8
+
   )
 }

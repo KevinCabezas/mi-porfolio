@@ -14,7 +14,13 @@
   button {
     @apply cursor-pointer
   }
+
+  .btn-navbar {
+    @apply flex items-center  justify-center gap-1 text-sky-900 hover:text-white  bg-white hover:bg-sky-400 rounded-full duration-300
+  }
 }
+
+
 
 .swiper-button-next,
 .swiper-button-prev {

@@ -6,7 +6,7 @@ export default function InfoPage() {
 
 
   return (
-    <div className="py-5 px-4 lg:px-16 2xl:px-22 ">
+    <section className="py-5 px-4 lg:px-16 2xl:px-22 ">
       <div className=" gap-10 w-full grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2" >
         <div className=" p-5 w-full 2xl:w-fit bg-white border border-gray-200 rounded-xl dark:bg-black/10 dark:border-gray-200/20 ">
           <div className="border-b space-y-2 pb-5 border-gray-200">
@@ -58,6 +58,6 @@ export default function InfoPage() {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

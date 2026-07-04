@@ -1,13 +1,23 @@
 // import { t } from "i18next";
-import CommentsPage from "../components/Comment-Page";
-import InfoPage from "../components/Info-Page";
+import CommentsPage from "../components/Section-Comments";
+import SectionContact from "../components/Section-Contact"
+import InfoPage from "../components/Section-Info";
 import ProfileSection from "../components/ProfileSection"
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-
+import { useSearchParams } from "react-router-dom";
 export default function About() {
-  const [tab, setTab] = useState<"info" | "comments">("comments");
+  // const { state } = useLocation();
+  const [searchParams] = useSearchParams();
+
+  const initialTab =
+    (searchParams.get("tab") as "info" | "comments" | "contact") ?? "info";
+
+  const [tab, setTab] = useState(initialTab);
+  // const [tab, setTab] = useState<"info" | "comments" | "contact">("contact");
+  // const [tab, setTab] = useState<"info" | "comments" | "contact">(state?.tab ?? "info");
   const { t } = useTranslation();
+
 
   return (
     <main className=" bg-gray-100 dark:bg-black/90">
@@ -24,10 +34,15 @@ export default function About() {
           className={`bg-s border-b-2 px-2 ${tab === "comments" ? "border-sky-400 text-sky-400" : "border-white dark:border-black/0"} pb-2`}>
           {t("comment")}
         </button>
+        <button onClick={() => setTab("contact")}
+          className={`bg-s border-b-2 px-2 ${tab === "contact" ? "border-sky-400 text-sky-400" : "border-white dark:border-black/0"} pb-2`}>
+          {t("nav_contact")}
+        </button>
       </div>
 
       {tab === "info" && <InfoPage />}
       {tab === "comments" && <CommentsPage />}
+      {tab === "contact" && <SectionContact />}
 
     </main>
   )

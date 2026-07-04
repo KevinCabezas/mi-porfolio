@@ -23,7 +23,7 @@ export default function CommentsPage() {
   }, []);
 
   return (
-    <div className="flex items-center flex-col py-5 px-4 lg:px-16 2xl:px-22 ">
+    <section className="flex items-center flex-col py-5 px-4 lg:px-16 2xl:px-22 ">
       <div className="dark:bg-black/10 dark:border-gray-200/20 p-5 bg-white border space-y-5 border-gray-200 rounded-xl w-full lg:w-1/2 2xl:w-1/2">
         <div className="flex items-center border-b border-gray-200 dark:border-gray-200/30 justify-between pb-5">
           <h3 className="flex items-center gap-1">
@@ -58,6 +58,6 @@ export default function CommentsPage() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }

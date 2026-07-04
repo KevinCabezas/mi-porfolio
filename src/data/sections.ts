@@ -45,7 +45,7 @@ export const sections: Section[] = [
   {
     icono: "famicons:call",
     titulo: "nav_contact",
-    path: "contact",
+    path: "about?tab=contact",
     boton: "btn_contact"
   }
 ];
