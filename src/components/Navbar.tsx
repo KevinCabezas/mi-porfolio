@@ -144,7 +144,7 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="fixed inset-0 h-dvh  flex lg:hidden">
-          <div className="w-2/3 max-w-75  dark:bg-[#121212] border-r dark:border-gray-100/10 bg-white p-4 flex flex-col gap-4 shadow-2xl animate-[slideIn_.35s_cubic-bezier(0.22,1,0.36,1)]">
+          <div className="w-2/3 max-w-75  dark:bg-[#121212]  bg-white p-4 flex flex-col gap-4 shadow-2xl animate-[slideIn_.35s_cubic-bezier(0.22,1,0.36,1)]">
             <div className="flex justify-end">
               <button
                 // className="bg-sky-50  rounded-full h-10 w-10 items-center justify-center flex "
