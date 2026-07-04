@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className=" lg:flex gap-2.5 hidden items-center">
           <Link to={"/about"} className="w-10 h-10 2xl:w-11 2xl:h-11 rounded-full overflow-hidden">
             <img
-              src={"https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/image_cb56ee4c.webp"}
+              src={"https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/retrato.webp"}
               alt="profile"
               className="w-full h-full object-cover"
             />

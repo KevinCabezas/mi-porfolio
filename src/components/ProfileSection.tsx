@@ -11,7 +11,7 @@ export default function ProfileSection() {
         <img
           alt="Portada"
           className="w-full h-full object-cover object-center"
-          src="https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/image_e150e9b5.webp"
+          src="https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/portada.webp"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
       </div>
@@ -26,7 +26,7 @@ export default function ProfileSection() {
               <img
                 alt="Kevin Cabezas Laura"
                 className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-top border-4 border-white dark:border-black/0 shadow-md"
-                src="https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/image_cb56ee4c.webp"
+                src="https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/retrato.webp"
               />
             </div>
 
