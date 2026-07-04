@@ -43,16 +43,18 @@ export default function Navbar() {
         <div className=" lg:flex gap-2.5 hidden items-center">
           <Link to={"/about"} className="w-10 h-10 2xl:w-11 2xl:h-11 rounded-full overflow-hidden">
             <img
-              src={"https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/retrato.jpg"}
+              src={"https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/image_cb56ee4c.webp"}
               alt="profile"
               className="w-full h-full object-cover"
             />
           </Link>
           {isHome && <>
-            <button className="flex items-center justify-center gap-1.5 text-sky-900 hover:text-white borde hover:bg-sky-400 bg-white rounded-full py-2 px-4 duration-300">
+            <a
+              href="/pdf/CV_KEVIN_CABEZAS.pdf" download
+              className="flex items-center justify-center gap-1.5 text-sky-900 hover:text-white borde hover:bg-sky-400 bg-white rounded-full py-2 px-4 duration-300">
               <Icon icon={"ep:document"} className="text-xl 2xl:text-2xl"></Icon>
               <span className="text-sm 2xl:text-base  ">{t("cv_download")}</span>
-            </button>
+            </a>
 
             <a
               target="_blank"
@@ -63,14 +65,22 @@ export default function Navbar() {
               <Icon icon={"uil:linkedin"} className="text-xl  2xl:text-2xl"></Icon>
 
             </a>
-            <button className=" flex items-center justify-center text-sky-900 hover:text-white bg-white hover:bg-sky-400 p-2 rounded-full duration-300">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=cabezaslaurakevin@gmail.com&su=Contacto%20desde%20mi%20portfolio"
+              className=" flex items-center justify-center text-sky-900 hover:text-white bg-white hover:bg-sky-400 p-2 rounded-full duration-300">
               <Icon icon={"ri:mail-line"} className="text-xl  2xl:text-2xl"></Icon>
 
-            </button>
-            <button className=" flex items-center justify-center text-sky-900 hover:text-white bg-white hover:bg-sky-400 p-2 rounded-full duration-300">
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://wa.me/5491132179663"
+              className=" flex items-center justify-center text-sky-900 hover:text-white bg-white hover:bg-sky-400 p-2 rounded-full duration-300">
               <Icon icon={"mingcute:whatsapp-line"} className="text-xl  2xl:text-2xl"></Icon>
 
-            </button>
+            </a>
           </>}
 
         </div>
@@ -78,22 +88,22 @@ export default function Navbar() {
         {!isHome &&
           <div className="flex-1 space-x-1 hidden lg:block 2xl:space-x-5">
             {sections
-            .filter((e) => e.titulo !== "nav_contact")
-            .map((e, i) => (
-              <NavLink
-                key={i}
-                to={e.path}
-                className={({ isActive }) =>
-                  `2xl:text-lg text-sm px-4 py-2 rounded-full font-semibold duration-300 transition-all ${isActive
-                    ? "bg-white text-sky-900"
-                    : "text-white hover:bg-white hover:text-sky-900"
-                  }`
-                }
-              >
-                {t(e.titulo)}
-              </NavLink>
+              .filter((e) => e.titulo !== "nav_contact")
+              .map((e, i) => (
+                <NavLink
+                  key={i}
+                  to={e.path}
+                  className={({ isActive }) =>
+                    `2xl:text-lg text-sm px-4 py-2 rounded-full font-semibold duration-300 transition-all ${isActive
+                      ? "bg-white text-sky-900"
+                      : "text-white hover:bg-white hover:text-sky-900"
+                    }`
+                  }
+                >
+                  {t(e.titulo)}
+                </NavLink>
 
-            ))}
+              ))}
           </div>
         }
 
@@ -102,7 +112,6 @@ export default function Navbar() {
 
           <Link
             to={'/about?tab=contact'}
-            // state={{ tab: "info" }}
             className="btn-navbar py-2 px-3 hidden lg:flex bg-sky-300 font-semibold gap-3 2xl:text-lg text-sm text-sky-900 hover:bg-sky-500 hover:text-white">
             <span>{t("contact_me")}</span>
             <Icon icon={'maki:arrow'} className=""></Icon>
@@ -135,7 +144,7 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="fixed inset-0 h-dvh  flex lg:hidden">
-          <div className="w-2/3 max-w-75  dark:bg-[#121212] border-r dark:border-gray-100/10 bg-white p-4 flex flex-col gap-4 shadow-lg animate-slide-in-left ">
+          <div className="w-2/3 max-w-75  dark:bg-[#121212] border-r dark:border-gray-100/10 bg-white p-4 flex flex-col gap-4 shadow-2xl animate-[slideIn_.35s_cubic-bezier(0.22,1,0.36,1)]">
             <div className="flex justify-end">
               <button
                 // className="bg-sky-50  rounded-full h-10 w-10 items-center justify-center flex "
@@ -146,48 +155,70 @@ export default function Navbar() {
             </div>
 
             <div className="space-y-3 flex-1 border-y pt-4 border-gray-200 dark:border-gray-200/20">
-              {sections.map((secc, i) => (
-                <NavLink
-                  key={i}
-                  to={secc.path}
-                  onClick={() => setMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `flex items-center  gap-3 text-base  rounded-full px-3 py-1   ${isActive
-                      ? "bg-sky-900 text-white dark:bg-gray-200 dark:text-gray-700"
-                      : "bg-gray-200/30 dark:bg-gray-200/10 dark:text-white"
-                    }`
-                  }
+              {sections
+                .filter((e) => e.titulo !== "nav_contact")
+                .map((secc, i) => (
+                  <NavLink
+                    key={i}
+                    to={secc.path}
+                    onClick={() => setMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `flex items-center  gap-3 text-base  rounded-full px-3 py-1   ${isActive
+                        ? "bg-sky-900 text-white dark:bg-gray-200 dark:text-gray-700"
+                        : "bg-gray-200/30 dark:bg-gray-200/10 dark:text-white"
+                      }`
+                    }
 
-                >
-                  <Icon icon={secc.icono} className={`text-sky-300`}></Icon>
-                  <span className=" font-semibold">{t(secc.titulo)}</span>
-                </NavLink>
-              ))}
+                  >
+                    <Icon icon={secc.icono} className={`text-sky-300`}></Icon>
+                    <span className=" font-semibold">{t(secc.titulo)}</span>
+                  </NavLink>
+                ))}
+              <Link
+                to={'/about?tab=contact'}
+                onClick={() => setMenuOpen(false)}
+                className="btn-navbar py-1 px-3 flex bg-sky-300 font-semibold gap-3 2xl:text-lg text-sm text-sky-900 hover:bg-sky-500 hover:text-white">
+                <span>{t("contact_me")}</span>
+                <Icon icon={'maki:arrow'} className=""></Icon>
+              </Link>
+
             </div>
 
             <div className="mt-auto justify-between flex">
-              <button className="flex items-center justify-center gap-1.5 bg-sky-900 dark:bg-sky-700 text-white rounded-full py-1.5 px-3 duration-300">
+              <a
+                href="/pdf/CV_KEVIN_CABEZAS.pdf" download
+                className="flex items-center justify-center gap-1.5 bg-sky-900 dark:bg-sky-700 text-white rounded-full py-1.5 px-3 duration-300">
                 <Icon icon={"ep:document"} className="text-s"></Icon>
                 <span className="text-xs">{t("cv_download")}</span>
-              </button>
+              </a>
 
-              <button className="flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white p-1.5  rounded-full duration-300">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/kevin-cabezas-8b8a472a8"
+                className="flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white p-1.5  rounded-full duration-300">
                 <Icon icon={"uil:linkedin"} className="text-"></Icon>
 
-              </button>
-              <button className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white p-1.5  rounded-full duration-300">
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=cabezaslaurakevin@gmail.com&su=Contacto%20desde%20mi%20portfolio"
+                className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white p-1.5  rounded-full duration-300">
                 <Icon icon={"ri:mail-line"} className="texsm"></Icon>
 
-              </button>
-              <Link
-                to={"/contact"}
-                onClick={() => setMenuOpen(false)}
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/5491132179663"
+                // onClick={() => setMenuOpen(false)}
                 className=" flex items-center justify-center bg-sky-900 dark:bg-sky-700 text-white p-1.5  rounded-full duration-300">
                 <Icon icon={"mingcute:whatsapp-line"} className="textm"></Icon>
-              </Link>
+              </a>
             </div>
           </div>
-          <div className="flex-1 dark:bg-gray-200/30 bg-black/80" onClick={() => setMenuOpen(false)} />
+          <div className="flex-1 dark:bg-gray-200/30 bg-black/80 right-0 top-0 animate-fade" onClick={() => setMenuOpen(false)} />
 
         </div>
       )}

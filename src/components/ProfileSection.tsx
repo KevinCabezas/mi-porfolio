@@ -11,7 +11,7 @@ export default function ProfileSection() {
         <img
           alt="Portada"
           className="w-full h-full object-cover object-center"
-          src="https://readdy.ai/api/search-image?query=abstract%20dark%20professional%20developer%20workspace%20with%20code%20on%20screens%2C%20dark%20moody%20atmosphere%2C%20cinematic%20wide%20shot%2C%20deep%20shadows%2C%20amber%20and%20dark%20tones%2C%20ultra%20wide%20banner%20format%2C%20high%20quality%20digital%20art&width=1200&height=400&seq=cover-about-01&orientation=landscape"
+          src="https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/image_e150e9b5.webp"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
       </div>
@@ -26,7 +26,7 @@ export default function ProfileSection() {
               <img
                 alt="Kevin Cabezas Laura"
                 className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-top border-4 border-white dark:border-black/0 shadow-md"
-                src="https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/retrato.jpg"
+                src="https://shxmmbwfmloumeouxyhm.supabase.co/storage/v1/object/public/portfolio/home/image_cb56ee4c.webp"
               />
             </div>
 
@@ -43,12 +43,13 @@ export default function ProfileSection() {
 
             {/* Botones */}
             <div className="flex items-center gap-2 pb-1">
-              <button
+              <a
+                href="/pdf/CV_KEVIN_CABEZAS.pdf" download
                 className="flex items-center gap-1.5 px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white text-sm font-medium rounded-full transition-colors whitespace-nowrap"
               >
                 <Icon icon={"ep:document"} className="text-xl"></Icon>
                 {t("cv_download")}
-              </button>
+              </a>
               {/* <a
                 target="_blank"
                 rel="noopener noreferrer"

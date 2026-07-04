@@ -63,9 +63,5 @@ export default function CardContact({ title, description, icon, btn, link, copi 
         </button>
       </div>
     </div>
-
-
-// 591132179663 cabezaslaurakevin@gmail.com dsfdsf https://github.com/KevinCabezas www.linkedin.com/in/kevin-cabezas-8b8a472a8
-
   )
 }

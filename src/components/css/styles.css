@@ -8,15 +8,15 @@
   }
 
   .text-label {
-    @apply text-sm text-gray-800 font-medium
+    @apply text-sm text-gray-600 font-medium 
   }
-  
+
   button {
     @apply cursor-pointer
   }
 
   .btn-navbar {
-    @apply flex items-center  justify-center gap-1 text-sky-900 hover:text-white  bg-white hover:bg-sky-400 rounded-full duration-300
+    @apply flex items-center justify-center gap-1 text-sky-900 hover:text-white bg-white hover:bg-sky-400 rounded-full duration-300
   }
 }
 
@@ -33,4 +33,32 @@
 
 .swiper-pagination-bullet-active {
   opacity: 1;
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%) scale(0.98);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade {
+  animation: fade 1.9s ease;
 }

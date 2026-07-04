@@ -31,7 +31,7 @@ export const listCardContact: TContact[] = [
     icon: "mingcute:whatsapp-line",
     description: "Enviame un mensaje",
     link: "https://wa.me/5491132179663",
-    copi: "591132179663",
+    copi: " +549 11 32179663",
     btn: "Enviar"
 
   },
