@@ -47,7 +47,7 @@ export default function CardContact({ title, description, icon, btn, link, copi 
 
       <div
 
-        className="text-xs w-full flex lg:flex-col gap-2 text-gray-300 bg-red h-full items-end justify-around lg:justify-end  font-semibold transition-all">
+        className="text-xs w-full lg:w-fit flex lg:flex-col gap-2 text-gray-300 bg-red- h-full items-end justify-around lg:justify-end  font-semibold transition-all">
         <a
           target="_blank"
           rel="noopener noreferrer"
