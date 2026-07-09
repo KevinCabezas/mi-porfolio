@@ -5,7 +5,7 @@ import { sections } from "../data/sections";
 export default function Footer() {
 
   const { t } = useTranslation();
- 
+
   return (
     <footer className="bg-black/90 text-gray-300 mt-auto border-t border-sky-400/20">
       <div className="px-4 lg:px-16 pt-12 pb-8 2xl:px-22">
@@ -29,9 +29,9 @@ export default function Footer() {
 
             <div className="flex items-center gap-2">
               <a
-                href="https://linkedin.com"
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/kevin-cabezas-8b8a472a8"
                 aria-label="LinkedIn"
                 className="w-9 h-9 2xl:w-12 2xl:h-12 flex items-center justify-center bg-gray-800 hover:bg-sky-400 text-gray-400 hover:text-white rounded-full transition-colors"
               >
@@ -40,9 +40,9 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://github.com"
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel="noopener noreferrer"
+                href="https://github.com/KevinCabezas"
                 aria-label="GitHub"
                 className="w-9 h-9 2xl:w-12 2xl:h-12 flex items-center justify-center bg-gray-800 hover:bg-sky-400 text-gray-400 hover:text-white rounded-full transition-colors"
               >
@@ -50,7 +50,9 @@ export default function Footer() {
               </a>
 
               <a
-                href="mailto:kevin@example.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=cabezaslaurakevin@gmail.com&su=Contacto%20desde%20mi%20portfolio"
                 aria-label="Email"
                 className="w-9 h-9 2xl:w-12 2xl:h-12 flex items-center justify-center bg-gray-800 hover:bg-sky-400 text-gray-400 hover:text-white rounded-full transition-colors"
               >
@@ -74,7 +76,7 @@ export default function Footer() {
                 {t(secc.titulo)}
               </Link>
             ))}
-          
+
           </div>
 
           {/* Contacto */}
@@ -85,14 +87,14 @@ export default function Footer() {
 
             <div className="flex items-center gap-2.5 text-sm 2xl:text-lg text-gray-400">
               <Icon icon="ri:mail-line" className="text-sky-400 text-lg" />
-              <a href="mailto:kevin@example.com" className="hover:text-sky-400 transition-colors">
-                kevin@example.com
-              </a>
+              <span className="hover:text-sky-400 transition-colors">
+                cabezaslaurakevin@gmail.com
+              </span>
             </div>
 
             <div className="flex items-center gap-2.5 text-sm 2xl:text-lg text-gray-400">
               <Icon icon="ri:phone-line" className="text-sky-400 text-lg" />
-              <span>+34 600 000 000</span>
+              <span>+54 9 11 32179663</span>
             </div>
 
             <div className="flex items-center gap-2.5 text-sm 2xl:text-lg text-gray-400">

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import CardProyect from "../components/Card-Project"
+import CardProyect from "../components/projects/Card-Project"
 import type { Project } from "../types/projects";
 import { getAllProjects } from "../service/projects.service";
-import ModalProject from "../components/Modal-Projects";
+import ModalProject from "../components/projects/Modal-Projects";
 import { Icon } from "@iconify/react";
 
 

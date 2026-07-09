@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react"
 import { useEffect, useState } from "react";
-import { getDetailProject } from "../service/projects.service";
-import type { TDetailsProject } from "../types/projects";
+import { getDetailProject } from "../../service/projects.service";
+import type { TDetailsProject } from "../../types/projects";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";

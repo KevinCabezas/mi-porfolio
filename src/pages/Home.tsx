@@ -1,5 +1,5 @@
-import Card from "../components/Card";
-import Portada from "../components/Portada";
+import Card from "../components/home/Card";
+import Portada from "../components/home/Portada";
 import { useTranslation } from 'react-i18next';
 import { sections } from "../data/sections";
 

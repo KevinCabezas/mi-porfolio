@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import type { TContact } from "../types/about";
+import type { TContact } from "../../types/about";
 import { useState } from "react";
 
 export default function CardContact({ title, description, icon, btn, link, copi }: TContact) {

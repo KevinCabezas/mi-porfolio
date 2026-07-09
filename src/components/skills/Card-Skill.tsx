@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import type { TSkillCard } from "../types/skylls";
+import type { TSkillCard } from "../../types/skylls";
 
 export default function CardSkill({ title, icon, color }: TSkillCard) {
 

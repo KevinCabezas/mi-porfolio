@@ -1,8 +1,8 @@
 // import { t } from "i18next";
-import CommentsPage from "../components/Section-Comments";
-import SectionContact from "../components/Section-Contact"
-import InfoPage from "../components/Section-Info";
-import ProfileSection from "../components/ProfileSection"
+import CommentsPage from "../components/about/Section-Comments";
+import SectionContact from "../components/about/Section-Contact"
+import InfoPage from "../components/about/Section-Info";
+import ProfileSection from "../components/about/ProfileSection"
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";

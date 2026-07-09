@@ -6,7 +6,6 @@ import Proyectos from "../pages/Proyectos";
 import Historial from "../pages/Historial";
 import Estudios from "../pages/Estudios";
 import Habilidades from "../pages/Habilidades";
-import Contacto from "../pages/Contacto";
 
 const AppRoutes = () => {
   return (
@@ -19,7 +18,6 @@ const AppRoutes = () => {
       <Route path="skills" element={<Habilidades />} />
       <Route path="history" element={<Historial />} />
       <Route path="education" element={<Estudios />} />
-      <Route path="contact" element={<Contacto />} />
 
       <Route path="*" element={<Error />} />
 

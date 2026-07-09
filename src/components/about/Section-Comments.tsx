@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import type { TComment } from "../types/about";
-import { getAllComents } from "../service/about.service";
+import type { TComment } from "../../types/about";
+import { getAllComents } from "../../service/about.service";
 import FormComentario from "./Form-Comentario";
 import { Icon } from "@iconify/react";
 import { t } from "i18next";

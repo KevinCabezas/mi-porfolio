@@ -1,7 +1,7 @@
 // import portada from "../assets/portada.png";
 import { useTranslation } from 'react-i18next';
 
-import { useTheme } from "../service/theme.service";
+import { useTheme } from "../../service/theme.service";
 
 export default function Portada() {
 const { t } = useTranslation();

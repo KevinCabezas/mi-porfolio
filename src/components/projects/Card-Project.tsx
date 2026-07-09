@@ -1,6 +1,6 @@
 // import { Link } from "react-router-dom"
 import { Icon } from "@iconify/react";
-import type { Props } from "../types/projects";
+import type { Props } from "../../types/projects";
 export default function CardProyect({ title, icon, description, stack, frontpage, onOpen}: Props) {
 
   // const handlerModal = () => {

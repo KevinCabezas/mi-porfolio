@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import CardSkill from "../components/Card-Skill";
+import CardSkill from "../components/skills/Card-Skill";
 import { languajesSkills } from "../data/skills";
 
 export default function Habilidades() {
