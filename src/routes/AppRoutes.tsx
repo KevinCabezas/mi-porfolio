@@ -2,10 +2,10 @@ import { Routes, Route, } from "react-router-dom";
 import Error from "../pages/Error";
 import Home from "../pages/Home";
 import About from "../pages/About";
-import Proyectos from "../pages/Proyectos";
-import Historial from "../pages/Historial";
-import Estudios from "../pages/Estudios";
-import Habilidades from "../pages/Habilidades";
+import Proyectos from "../pages/Projects";
+import Historial from "../pages/History";
+import Estudios from "../pages/Education";
+import Habilidades from "../pages/Skills";
 
 const AppRoutes = () => {
   return (
