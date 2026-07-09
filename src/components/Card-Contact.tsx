@@ -25,7 +25,7 @@ export default function CardContact({ title, description, icon, btn, link, copi 
 
 
     <div
-      className=" dark:bg-black/10 dark:border-gray-200/20 bg-white border flex flex-col justify-between  border-gray-200 rounded-xl p-3 lg:p-5 2xl:p-7 lg:flex-row items-start gap-4 2xl:gap-6 transition-all duration-200"
+      className=" dark:bg-black/10 dark:border-gray-200/20 bg-white border flex justify-between  border-gray-200 rounded-xl p-3 lg:p-5 2xl:p-7 lg:flex-row items-start gap-4 2xl:gap-6 transition-all duration-200"
     >
       <div className="flex flex-col flex-1 gap-3 w-full justify-between h-full">
         <div className="flex items-center gap-2">
@@ -47,7 +47,7 @@ export default function CardContact({ title, description, icon, btn, link, copi 
 
       <div
 
-        className="text-xs w-full lg:w-fit flex lg:flex-col gap-2 text-gray-300 bg-red- h-full items-end justify-around lg:justify-end  font-semibold transition-all">
+        className="text-xs w-fit flex flex-col gap-2 text-gray-300 bg-red- h-full items-end justify-around lg:justify-end  font-semibold transition-all">
         <a
           target="_blank"
           rel="noopener noreferrer"

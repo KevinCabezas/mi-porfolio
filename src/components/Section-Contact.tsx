@@ -15,7 +15,7 @@ export default function SectionContact() {
           <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Estoy disponible para proyectos freelance, colaboraciones o nuevas  oportunidades laborales. No dudes en escribirme.</p>
         </div>
       </div>
-      <div className="grid lg:grid-cols-4 gap-5 grid-cols-2 ">
+      <div className="grid lg:grid-cols-4 gap-5 grid-cols-1 ">
         {data.map((e, i) => (
           <CardContact
             key={i}
